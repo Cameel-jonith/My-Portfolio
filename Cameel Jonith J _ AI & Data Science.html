@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Cameel Jonith J | AI &amp; Data Science</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Unica+One&display=swap" rel="stylesheet">
+
+<link href="https://fonts.googleapis.com/css2?family=Henny+Penny&family=Fraunces:opsz,wght@9..144,600;9..144,800&family=JetBrains+Mono:wght@400;600;800&display=swap" rel="stylesheet">
+<style>
+:root{color-scheme:dark;--bg:#0c130f;--panel:#121c16cc;--line:#26382d;--acc:#f5a524;--glow:#f5a52455;--fg:#ecefe8;--mut:#8fa396;--ok:#7fd1a1;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+:root[data-theme="paper"]{color-scheme:light;--bg:#f6f3ea;--panel:#ffffffd9;--line:#ddd7c6;--acc:#a85500;--glow:#a8550033;--fg:#1d2420;--mut:#5d675f;--ok:#1f7a4d}
+:root[data-theme="midnight"]{--bg:#080b1a;--panel:#0e1330cc;--line:#1f2750;--acc:#6ea8ff;--glow:#6ea8ff33;--fg:#dfe6ff;--mut:#7480a8;--ok:#7fd1a1}
+*,*:before,*:after{box-sizing:inherit}
+html{scroll-behavior:smooth;scroll-padding-top:calc(env(safe-area-inset-top,0px) + 90px)}
+body{margin:0;background:var(--bg);color:var(--fg);font:400 15px/1.7 "JetBrains Mono",ui-monospace,Menlo,monospace;min-height:100vh;background-image:radial-gradient(ellipse at 70% 0,var(--glow),transparent 55%);background-attachment:fixed}
+body:after{content:"";position:fixed;inset:0;pointer-events:none;background:radial-gradient(var(--line) 1px,transparent 1px) 0 0/28px 28px;opacity:.55;z-index:-1}
+a{color:inherit;text-decoration:none}
+:focus-visible{outline:2px solid var(--acc);outline-offset:3px}
+.wrap{max-width:1180px;margin:0 auto;padding:0 20px}
+nav{position:sticky;top:calc(env(safe-area-inset-top,0px) + 10px);z-index:20;margin:10px auto 0;max-width:1180px;display:flex;align-items:center;gap:14px;flex-wrap:wrap;padding:10px 18px;border:1px solid var(--line);border-radius:6px;background:var(--panel);backdrop-filter:blur(10px)}
+.logo{width:40px;height:40px;border:1px solid var(--acc);border-radius:50%;display:grid;place-items:center;font-family:Fraunces,serif;font-weight:800;font-size:22px;color:var(--acc);box-shadow:0 0 12px var(--glow)}
+.who{line-height:1.2;font-size:13px;font-weight:800}.who small{display:block;color:var(--mut);font-weight:400;font-size:10px;letter-spacing:.12em}
+.badge{display:flex;align-items:center;gap:8px;font-size:10px;letter-spacing:.12em;color:var(--ok);border:1px solid #22c58b55;border-radius:6px;padding:6px 14px;background:#22c58b12}
+.badge i{width:8px;height:8px;border-radius:50%;background:var(--ok);animation:pulse 1.6s infinite}
+@keyframes pulse{50%{opacity:.25}}
+.links{display:flex;gap:6px;margin-left:auto;flex-wrap:wrap}
+.links a{padding:7px 14px;border-radius:6px;font-size:12px;letter-spacing:.1em;border:1px solid transparent;color:var(--mut)}
+.links a:hover,.links a.on{color:var(--fg);border-color:var(--acc);background:var(--glow)}
+.hero{display:grid;grid-template-columns:1.2fr 1fr;gap:40px;align-items:center;padding:70px 0 50px}
+.tag{color:var(--acc);font-size:12px;letter-spacing:.03em;margin:0 0 10px}
+h1{font:400 clamp(40px,7vw,84px)/1.1 "Henny Penny",system-ui,cursive;margin:0;color:var(--fg);letter-spacing:0;text-shadow:0 0 20px var(--acc),0 0 2px var(--acc)}
+
+@keyframes glitch{25%{transform:translate(3px,-2px);text-shadow:-3px 0 #0ff,3px 0 var(--acc)}75%{transform:translate(-3px,2px);text-shadow:3px 0 #0ff,-3px 0 var(--acc)}}
+.lede{max-width:46ch;color:var(--mut);margin:18px 0 0}
+.codex{border:1px solid var(--line);border-radius:10px;background:var(--panel);padding:14px 16px;box-shadow:0 0 40px var(--glow)}
+.codex h6{margin:0 0 10px;font-size:10px;letter-spacing:.14em;color:var(--acc);font-weight:600}
+#braille{margin:0;font:8px/8px monospace;color:var(--acc);white-space:pre;overflow:hidden;text-align:center;text-shadow:0 0 6px var(--glow);min-height:200px}
+#rain{display:block;width:100%;height:300px;border-radius:6px;background:#00000026}
+#loader{position:fixed;inset:0;z-index:100;background:var(--bg);display:grid;place-items:center;transition:opacity .7s,visibility .7s}
+#loader.done{opacity:0;visibility:hidden}
+.ld{text-align:center;font-size:13px;color:var(--mut);letter-spacing:.08em}
+.ring{width:84px;height:84px;margin:0 auto 18px;border:2px solid var(--line);border-top-color:var(--acc);border-radius:50%;animation:spin 1s linear infinite;box-shadow:0 0 24px var(--glow)}
+@keyframes spin{to{transform:rotate(360deg)}}
+.ld b{display:block;font-size:34px;color:var(--fg);font-weight:800;margin-bottom:4px}
+.lbar{width:220px;height:3px;background:var(--line);margin:14px auto 0}.lbar i{display:block;height:100%;width:0;background:var(--acc);box-shadow:0 0 10px var(--acc)}
+.dropf{display:flex;gap:8px;margin-top:12px}.dropf input{flex:1;min-width:0;padding:10px 12px}.dropf .btn{padding:10px 18px}
+.cfoot{display:flex;justify-content:space-between;align-items:center;font-size:10px;color:var(--mut);margin-top:10px;gap:8px;flex-wrap:wrap}
+.cfoot button,.pal button{font:inherit;cursor:pointer;background:none;border:0;color:var(--acc);font-size:10px;letter-spacing:.1em}
+.pal{display:flex;gap:8px;justify-content:center;margin-top:12px}
+.pal button{padding:5px 14px;border-radius:6px;background:#ffffff0d;color:var(--mut)}
+.pal button.on{background:var(--acc);color:#14100a}
+.card{border:1px solid var(--line);border-radius:10px;background:var(--panel);padding:28px;margin-bottom:26px}
+.bar{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;color:var(--mut);font-size:12px;border-bottom:1px solid var(--line);padding-bottom:16px;margin-bottom:24px}
+.bar b{color:var(--acc);font-weight:400}.bar span:last-child:before{content:"\25CF ";color:var(--acc)}
+h2.name{font-size:clamp(38px,6vw,70px);margin:0;line-height:1.1;font-weight:800}
+h2.unica-one-regular {
+  font-family: "Unica One", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.role{color:var(--fg);margin:8px 0 18px;font-size:clamp(13px,2vw,18px)}
+.role:before{content:"> ";color:var(--acc)}
+.cur{display:inline-block;width:.6em;height:1.1em;background:var(--acc);vertical-align:-3px;animation:pulse 1s steps(2) infinite}
+.card p{max-width:68ch}
+section{padding:36px 0}
+h3{font-size:22px;margin:0 0 20px;font-weight:800}
+h3:before{content:"~/";color:var(--acc)}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px}
+.case{border:1px solid var(--line);border-radius:8px;padding:22px;background:var(--panel);transition:border-color .2s,box-shadow .2s}
+.case:hover{border-color:var(--acc);box-shadow:0 0 24px var(--glow)}
+.case h4{margin:0 0 8px;font-size:17px}
+.st{font-size:11px;color:var(--ok);border:1px solid #22c58b55;border-radius:6px;padding:2px 8px;float:right}
+.st.ph{color:var(--mut);border-color:var(--line)}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
+.chips span{font-size:12px;border:1px solid var(--line);border-radius:6px;padding:3px 10px;color:var(--mut)}
+.sk{margin:0 0 16px}.sk div{display:flex;justify-content:space-between;font-size:13px}
+.sk i{display:block;height:6px;border-radius:3px;background:var(--line);margin-top:6px;overflow:hidden}
+.sk i b{display:block;height:100%;width:0;background:var(--acc);box-shadow:0 0 10px var(--acc);transition:width 1.2s ease}
+.tl{border-left:1px solid var(--acc);padding-left:20px}
+.tl h4{margin:0}.tl small{color:var(--mut)}
+form{display:grid;gap:14px}
+input,textarea{font:inherit;color:var(--fg);background:#00000033;border:1px solid var(--line);border-radius:10px;padding:12px 14px;width:100%}
+input:focus,textarea:focus{border-color:var(--acc);outline:none}
+.btn{font:inherit;cursor:pointer;color:#14100a;font-weight:600;background:var(--acc);border:0;border-radius:6px;padding:12px 26px;letter-spacing:.08em;box-shadow:0 0 18px var(--glow);justify-self:start;display:inline-block}
+.btn.o{background:none;color:var(--fg);font-weight:400;border:1px solid var(--line);box-shadow:none}
+.row{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:22px}
+footer{text-align:center;color:var(--mut);font-size:12px;padding:30px 0 50px}
+@media(max-width:820px){.hero{grid-template-columns:1fr;padding-top:40px}.links{margin-left:0}.badge{display:none}}
+
+</style>
+</head>
+<body>
+<div id='loader' role='status' aria-live='polite'><div class='ld'><div class='ring'></div><b id='pct'>0%</b>loading portfolio&hellip;<div class='lbar'><i id='lb'></i></div></div></div>
+<nav aria-label="Main">
+  <div class="logo">C</div>
+  <div class="who">CAMEEL JONITH J<small>AI &amp; DATA SCIENCE // STUDENT</small></div>
+  <div class="badge"><i></i>OPEN TO INTERNSHIPS</div>
+  <div class="links"><a href="#home" class="on">HOME</a><a href="#projects">PROJECTS</a><a href="#skills">SKILLS</a><a href="#about">ABOUT</a><a href="#contact">CONTACT</a></div>
+</nav>
+
+<main class="wrap">
+<div class="hero" id="home">
+  <div>
+    <p class="tag">Portfolio of an AI &amp; Data Science student</p>
+    <h1>Pure insights<br>Zero noise..</h1>
+    <p class="lede">Python, machine learning and data analytics, turning raw data into meaningful insights.</p>
+  </div>
+  <div>
+    <div class="codex">
+      <h6>Live stream of code, numbers and words</h6>
+      <canvas id="rain" role="img" aria-label="Animated falling code, numbers and words"></canvas>
+      <form class="dropf" id="drop"><input id="msg" maxlength="40" placeholder="> type a message" aria-label="Message to drop" autocomplete="off"><button class="btn" type="submit">DROP IT</button></form>
+      <div class="cfoot"><span id="tname">THEME: HARVEST</span><span>STREAMING&hellip;</span></div>
+    </div>
+    <div class="pal" role="group" aria-label="Palette"><button class="on" data-t="harvest">HARVEST</button><button data-t="paper">PAPER</button><button data-t="midnight">MIDNIGHT</button></div>
+  </div>
+</div>
+
+<div class="card">
+  <div class="bar"><span><b>&gt;_</b> ~/cameel/about.py</span><span>Open to internships</span></div>
+  <h2 class="name">Cameel Jonith J</h2>
+  <div class="role"><span id="type"></span><span class="cur"></span></div>
+  <p>I&rsquo;m a third-year B.Tech student in Artificial Intelligence and Data Science with a strong interest in Python programming, machine learning, data analytics and AI-driven solutions. I enjoy learning new technologies, working on real-world projects and turning data into meaningful insights.</p>
+  <div class="row" style="margin:18px 0 0"><a class="btn" href="mailto:jonithjonith@gmail.com">EMAIL</a><a class="btn o" href="https://www.linkedin.com/in/cameel-jonith" target="_blank" rel="noopener">LINKEDIN</a></div>
+</div>
+
+<section id="projects">
+  <h3>projects</h3>
+  <div class="grid">
+    <article class="case"><span class="st">IN PROGRESS</span><h4>Crop Yield Prediction</h4><p>Applying data science and machine learning to agricultural challenges.</p><div class="chips"><span>Python</span><span>Pandas</span><span>Machine Learning</span></div></article>
+    <article class="case"><span class="st ph">PLACEHOLDER</span><h4>[PROJECT_2]</h4><p>Add your next project here: goal, tools and result.</p><div class="chips"><span>[TECH]</span></div></article>
+  </div>
+</section>
+
+<section id="skills">
+  <h3>skills</h3>
+  <div class="card">
+    <div class="sk"><div><span>Python</span><span>85%</span></div><i><b data-w="85"></b></i></div>
+    <div class="sk"><div><span>Pandas</span><span>75%</span></div><i><b data-w="75"></b></i></div>
+    <div class="sk"><div><span>Machine Learning</span><span>65%</span></div><i><b data-w="65"></b></i></div>
+    <p style="color:var(--mut);font-size:12px;margin:0">Bar levels are placeholders. Edit data-w values to match your own.</p>
+  </div>
+</section>
+
+<section id="about">
+  <h3>about</h3>
+  <div class="grid">
+    <div class="card tl"><h4>B.Tech, Artificial Intelligence &amp; Data Science</h4><small>Ponjesly College of Engineering, Nagercoil, Tamil Nadu &middot; from 2024</small><p>Currently in third year. Certificate: Python programming course (completed).</p></div>
+    <div class="card"><h4 style="margin-top:0">Areas of interest</h4><div class="chips"><span>Artificial Intelligence</span><span>Machine Learning</span><span>Data Science</span><span>Python Programming</span><span>Data Analytics</span></div><p>Looking to gain practical experience, collaborate with like-minded people and contribute to innovative AI and Data Science projects.</p></div>
+  </div>
+</section>
+
+<section id="contact">
+  <h3>contact</h3>
+  <div class="card">
+    <div class="row"><a class="btn" href="mailto:jonithjonith@gmail.com">EMAIL ME</a><a class="btn o" href="https://www.linkedin.com/in/cameel-jonith" target="_blank" rel="noopener">LINKEDIN</a><a class="btn o" href="https://github.com/Cameel-jonith">[GITHUB_URL]</a></div>
+    <form id="f"><input name="n" placeholder="> name" required aria-label="Name"><input name="e" type="email" placeholder="> email" required aria-label="Email"><textarea name="m" rows="4" placeholder="> message" required aria-label="Message"></textarea><button class="btn" type="submit">SEND MESSAGE</button></form>
+  </div>
+</section>
+</main>
+<footer><p style="margin:0 0 10px"><a href="mailto:jonithjonith@gmail.com" style="color:var(--acc)">jonithjonith@gmail.com</a> &middot; <a href="https://www.linkedin.com/in/cameel-jonithj-b53364391" target="_blank" rel="noopener" style="color:var(--acc)">LinkedIn</a></p>&copy; 2026 Cameel Jonith J // Python, data and plain HTML</footer>
+
+<script>
+(function(){
+var $=function(s){return document.querySelector(s)};
+// typewriter
+var txt="AI_DATA_SCIENCE_STUDENT && PYTHON_ML_ENTHUSIAST",el=$("#type"),i=0;
+if(matchMedia("(prefers-reduced-motion:reduce)").matches){el.textContent=txt}else{(function t(){el.textContent=txt.slice(0,i++);if(i<=txt.length)setTimeout(t,55)})()}
+// falling code rain
+var cv=$("#rain"),cx=cv.getContext("2d"),fs=15,W=0,H=0,drops=[],fall=[],tick=0;
+var CH="01{}[]()<>=+*/;:#$%&23456789",WD=["import","pandas","def","model.fit()","predict","yield","numpy","train","SELECT","print()","accuracy","dataset","0.94","x_test","return","loss","epoch","lambda","DataFrame","crop_yield","3.14159","if","for","sklearn","0xFF","mean()"];
+function size(){var r=cv.getBoundingClientRect(),d=window.devicePixelRatio||1;cv.width=r.width*d;cv.height=r.height*d;cx.setTransform(d,0,0,d,0,0);W=r.width;H=r.height;drops=[];for(var i=0;i<Math.floor(W/fs);i++)drops.push(-Math.random()*30)}
+function draw(){
+  cx.globalCompositeOperation="destination-out";cx.fillStyle="rgba(0,0,0,.13)";cx.fillRect(0,0,W,H);
+  cx.globalCompositeOperation="source-over";
+  var cs=getComputedStyle(document.documentElement),acc=cs.getPropertyValue("--acc").trim(),fg=cs.getPropertyValue("--fg").trim();
+  cx.font=fs+"px 'JetBrains Mono',monospace";
+  for(var i=0;i<drops.length;i++){
+    var y=drops[i]*fs,x=i*fs;
+    cx.globalAlpha=.55;cx.fillStyle=acc;cx.fillText(CH[Math.floor(Math.random()*CH.length)],x,y-fs);
+    cx.globalAlpha=.95;cx.fillStyle=fg;cx.fillText(CH[Math.floor(Math.random()*CH.length)],x,y);
+    drops[i]+=.35;if(y>H&&Math.random()>.975)drops[i]=-Math.random()*10;
+  }
+  if(tick++%38===0){var w=WD[Math.floor(Math.random()*WD.length)];fall.push({t:w,x:Math.random()*Math.max(10,W-w.length*9-10),y:-10})}
+  cx.font="600 13px 'JetBrains Mono',monospace";cx.globalAlpha=1;cx.fillStyle=acc;
+  drawLetters(acc,fg);for(var k=fall.length-1;k>=0;k--){var f=fall[k];cx.fillText(f.t,f.x,f.y);f.y+=1.1;if(f.y>H+20)fall.splice(k,1)}
+  cx.globalAlpha=1;
+}
+var lets=[],RM=matchMedia("(prefers-reduced-motion:reduce)").matches;
+function drawLetters(acc,fg){cx.save();for(var i=lets.length-1;i>=0;i--){var l=lets[i];if(l.d>0){l.d--}else if(!l.r){l.vy+=.35;l.y+=l.vy;l.x+=l.vx;if(l.y>H-8){l.y=H-8;l.vy*=-.35;l.vx*=.6;if(Math.abs(l.vy)<1){l.vy=0;l.r=1}}}else{l.a++}
+var al=l.a>200?Math.max(0,1-(l.a-200)/100):1;if(al<=0){lets.splice(i,1);continue}
+cx.globalAlpha=al;cx.fillStyle=l.r?acc:fg;cx.font="800 "+l.s+"px 'JetBrains Mono',monospace";cx.fillText(l.c,l.x,l.y)}cx.restore()}
+$("#drop").addEventListener("submit",function(e){e.preventDefault();var inp=$("#msg"),t=(inp.value||"hello").slice(0,40),sz=Math.min(26,(W-24)/t.length/.6),cw=sz*.6,x0=(W-t.length*cw)/2;for(var i=0;i<t.length;i++){if(t[i]!==" ")lets.push({c:t[i],x:x0+i*cw,y:36,vy:0,vx:(Math.random()-.5)*.8,d:20+Math.floor(Math.random()*60),a:0,r:0,s:sz})}inp.value=""});
+size();window.addEventListener("resize",size);
+(function loop(){draw();requestAnimationFrame(loop)})();
+// loader + particle man
+var ld=$('#loader'),pn=$('#pct'),lb=$('#lb'),pr=0,rdy=false,go=false,t0=Date.now();
+document.body.style.overflow='hidden';
+if(document.fonts&&document.fonts.ready)document.fonts.ready.then(function(){rdy=true});
+setTimeout(function(){rdy=true},3500);
+function fin(){if(go)return;go=true;ld.classList.add('done');document.body.style.overflow=''}
+setTimeout(fin,7000);
+(function st(){var tg=Math.min(100,(Date.now()-t0)/22);if(!rdy)tg=Math.min(tg,90);pr+=(tg-pr)*.12;pn.textContent=Math.round(pr)+'%';lb.style.width=pr+'%';if(pr>99.4&&rdy)fin();else requestAnimationFrame(st)})();
+// palette
+document.querySelectorAll(".pal button").forEach(function(b){b.addEventListener("click",function(){document.querySelectorAll(".pal button").forEach(function(x){x.classList.remove("on")});b.classList.add("on");var t=b.dataset.t;if(t==="harvest")document.documentElement.removeAttribute("data-theme");else document.documentElement.setAttribute("data-theme",t);$("#tname").textContent="THEME: "+t.toUpperCase()})});
+// nav highlight + skill bars
+var links=document.querySelectorAll(".links a");
+new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){links.forEach(function(a){a.classList.toggle("on",a.getAttribute("href")==="#"+e.target.id)})}})},{rootMargin:"-40% 0px -55% 0px"}).observe&&document.querySelectorAll("#home,#projects,#skills,#about,#contact").forEach(function(s){new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting)links.forEach(function(a){a.classList.toggle("on",a.getAttribute("href")==="#"+s.id)})})},{rootMargin:"-40% 0px -55% 0px"}).observe(s)});
+new IntersectionObserver(function(es,o){es.forEach(function(e){if(e.isIntersecting){e.target.querySelectorAll("b[data-w]").forEach(function(b){b.style.width=b.dataset.w+"%"});o.unobserve(e.target)}})}).observe($("#skills"));
+// contact form -> mailto
+$("#f").addEventListener("submit",function(e){e.preventDefault();var f=e.target;location.href="mailto:jonithjonith@gmail.com?subject="+encodeURIComponent("Portfolio message from "+f.n.value)+"&body="+encodeURIComponent(f.m.value+"\n\n"+f.n.value+" ("+f.e.value+")")});
+})();
+</script>
+</body>
+</html>
